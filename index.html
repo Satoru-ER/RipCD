@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RipCD - Setup & Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <div>
+            <p class="brand-title">RipCD</p>
+            <p class="brand-subtitle">Compact Disc Memory</p>
+          </div>
+        </div>
+        <div class="status">
+          <span>07:42</span>
+          <span class="status-pill">CD-1</span>
+        </div>
+      </header>
+
+      <main class="screens">
+        <section class="screen setup active" data-screen="setup">
+          <div class="setup-card">
+            <h1>初期設定</h1>
+            <p class="lead">CDプレイヤーの世界観で、最初のディスクライブラリを登録します。</p>
+
+            <div class="setup-grid">
+              <div class="setup-section">
+                <h2>ライブラリ</h2>
+                <label class="field">
+                  <span>ディスク名</span>
+                  <input type="text" value="Neon Groove Vol.1" />
+                </label>
+                <label class="field">
+                  <span>保存モード</span>
+                  <select>
+                    <option>Lossless / 16bit</option>
+                    <option>High Fidelity / 24bit</option>
+                    <option>Space Saver / 320kbps</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>光学ドライブ</span>
+                  <div class="toggle">
+                    <input type="checkbox" id="drive" checked />
+                    <label for="drive">アクティブ</label>
+                  </div>
+                </label>
+              </div>
+
+              <div class="setup-section">
+                <h2>ビジュアル</h2>
+                <label class="field">
+                  <span>ルームライティング</span>
+                  <input type="range" min="0" max="100" value="64" />
+                </label>
+                <label class="field">
+                  <span>アンビエントグロー</span>
+                  <input type="range" min="0" max="100" value="78" />
+                </label>
+                <div class="setup-preview">
+                  <div class="disc"></div>
+                  <div>
+                    <p class="preview-title">Pickup Arm</p>
+                    <p class="preview-desc">回転ディスクを検出中</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="setup-actions">
+              <button class="secondary">スキップ</button>
+              <button class="primary" data-action="enter-home">ホームへ</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen home" data-screen="home">
+          <div class="home-glass">
+            <div class="home-header">
+              <h1>Liquid Glass Home</h1>
+              <p>CDプレイヤーのメインコンソール</p>
+            </div>
+
+            <div class="home-grid">
+              <div class="tile now-playing">
+                <div class="tile-header">
+                  <span>Now Spinning</span>
+                  <span class="chip">TRACK 05</span>
+                </div>
+                <div class="album">
+                  <div class="album-art"></div>
+                  <div>
+                    <h3>Crystal Circuit</h3>
+                    <p>NEON DANCE CLUB</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 62%"></div>
+                </div>
+                <div class="controls">
+                  <button>⏮</button>
+                  <button class="play">⏯</button>
+                  <button>⏭</button>
+                </div>
+              </div>
+
+              <div class="tile library">
+                <h2>Disc Library</h2>
+                <div class="library-list">
+                  <div class="library-item">
+                    <span>Neon Groove Vol.1</span>
+                    <span>48 tracks</span>
+                  </div>
+                  <div class="library-item">
+                    <span>Midnight Signal</span>
+                    <span>31 tracks</span>
+                  </div>
+                  <div class="library-item">
+                    <span>City Echoes</span>
+                    <span>22 tracks</span>
+                  </div>
+                </div>
+                <button class="secondary">ディスク追加</button>
+              </div>
+
+              <div class="tile quick">
+                <h2>Quick Access</h2>
+                <div class="quick-grid">
+                  <button class="quick-btn">EQ Presets</button>
+                  <button class="quick-btn">Room FX</button>
+                  <button class="quick-btn">Rip Queue</button>
+                  <button class="quick-btn">Laser Scan</button>
+                </div>
+              </div>
+
+              <div class="tile ambience">
+                <h2>Ambient Capsule</h2>
+                <p>ガラス越しに揺れるライトと、回転ディスクの反射を同期。</p>
+                <div class="ambient-controls">
+                  <div>
+                    <span>Glow</span>
+                    <div class="mini-bar">
+                      <div style="width: 72%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Pulse</span>
+                    <div class="mini-bar">
+                      <div style="width: 48%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="home-footer">
+              <button class="secondary" data-action="back-setup">設定に戻る</button>
+              <button class="primary">再生開始</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

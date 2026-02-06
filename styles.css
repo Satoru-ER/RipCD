@@ -1,0 +1,378 @@
+:root {
+  color-scheme: dark;
+  font-family: "Noto Sans JP", "Segoe UI", sans-serif;
+  --bg: #0b0f1c;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.16);
+  --accent: #7cf9ff;
+  --accent-strong: #b6fffa;
+  --text: #e8f1ff;
+  --muted: rgba(232, 241, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, #1b2a4a, #0b0f1c 60%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.brand-title {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status-pill {
+  padding: 6px 12px;
+  background: var(--panel);
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+}
+
+.screens {
+  position: relative;
+}
+
+.screen {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.setup-card {
+  background: var(--panel);
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.setup-card h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.setup-section {
+  background: var(--panel-strong);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+}
+
+.setup-section h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  background: rgba(8, 12, 22, 0.7);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.setup-preview {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.disc {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1) 60%, transparent 70%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3), 0 0 18px rgba(124, 249, 255, 0.4);
+}
+
+.preview-title {
+  font-weight: 600;
+}
+
+.preview-desc {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.setup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent), #7cc5ff);
+  color: #0a0f1d;
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+}
+
+.home-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  border-radius: 28px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.08), 0 30px 80px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+}
+
+.home-header {
+  margin-bottom: 20px;
+}
+
+.home-header h1 {
+  font-size: 26px;
+}
+
+.home-header p {
+  color: var(--muted);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.tile {
+  background: rgba(8, 12, 22, 0.65);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid var(--glass-border);
+  min-height: 160px;
+}
+
+.tile h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(124, 249, 255, 0.2);
+  color: var(--accent-strong);
+  font-size: 12px;
+}
+
+.album {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.album-art {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #7cf9ff, #8a7bff);
+  box-shadow: 0 0 14px rgba(124, 249, 255, 0.4);
+}
+
+.progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(135deg, #7cf9ff, #5c91ff);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.controls button {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+}
+
+.controls .play {
+  background: var(--accent);
+  color: #0a0f1d;
+}
+
+.library-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.library-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quick-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.ambient-controls {
+  display: grid;
+  gap: 14px;
+}
+
+.mini-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.mini-bar div {
+  height: 100%;
+  background: linear-gradient(135deg, #7cf9ff, #a77bff);
+}
+
+.home-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 720px) {
+  .app {
+    padding: 18px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
