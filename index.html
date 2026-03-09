@@ -3,166 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RipCD - Setup & Home</title>
+    <title>RipCD Player</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app">
-      <header class="top-bar">
-        <div class="brand">
-          <span class="brand-dot"></span>
-          <div>
-            <p class="brand-title">RipCD</p>
-            <p class="brand-subtitle">Compact Disc Memory</p>
-          </div>
-        </div>
-        <div class="status">
-          <span>07:42</span>
-          <span class="status-pill">CD-1</span>
-        </div>
-      </header>
+    <div class="shell">
+      <aside class="sidebar">
+        <button class="menu">☰</button>
+        <button class="active">✎</button>
+        <nav>
+          <button>ホーム</button>
+          <button>おすすめ</button>
+          <button>全曲</button>
+        </nav>
+      </aside>
 
-      <main class="screens">
-        <section class="screen setup active" data-screen="setup">
-          <div class="setup-card">
-            <h1>初期設定</h1>
-            <p class="lead">CDプレイヤーの世界観で、最初のディスクライブラリを登録します。</p>
+      <main class="content">
+        <header class="top">
+          <h1>ホーム</h1>
+          <div class="icons">🔔 ⚙️</div>
+        </header>
 
-            <div class="setup-grid">
-              <div class="setup-section">
-                <h2>ライブラリ</h2>
-                <label class="field">
-                  <span>ディスク名</span>
-                  <input type="text" value="Neon Groove Vol.1" />
-                </label>
-                <label class="field">
-                  <span>保存モード</span>
-                  <select>
-                    <option>Lossless / 16bit</option>
-                    <option>High Fidelity / 24bit</option>
-                    <option>Space Saver / 320kbps</option>
-                  </select>
-                </label>
-                <label class="field">
-                  <span>光学ドライブ</span>
-                  <div class="toggle">
-                    <input type="checkbox" id="drive" checked />
-                    <label for="drive">アクティブ</label>
-                  </div>
-                </label>
-              </div>
-
-              <div class="setup-section">
-                <h2>ビジュアル</h2>
-                <label class="field">
-                  <span>ルームライティング</span>
-                  <input type="range" min="0" max="100" value="64" />
-                </label>
-                <label class="field">
-                  <span>アンビエントグロー</span>
-                  <input type="range" min="0" max="100" value="78" />
-                </label>
-                <div class="setup-preview">
-                  <div class="disc"></div>
-                  <div>
-                    <p class="preview-title">Pickup Arm</p>
-                    <p class="preview-desc">回転ディスクを検出中</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="setup-actions">
-              <button class="secondary">スキップ</button>
-              <button class="primary" data-action="enter-home">ホームへ</button>
-            </div>
+        <section>
+          <h2>おすすめのアーティスト →</h2>
+          <div class="row circles">
+            <div class="circle"><span>YOASOBI</span></div>
+            <div class="circle"><span>嵐</span></div>
+            <div class="circle"><span>女王蜂</span></div>
+            <div class="circle"><span>TAKESHI</span></div>
+            <div class="circle"><span>太鼓の達人</span></div>
           </div>
         </section>
 
-        <section class="screen home" data-screen="home">
-          <div class="home-glass">
-            <div class="home-header">
-              <h1>Liquid Glass Home</h1>
-              <p>CDプレイヤーのメインコンソール</p>
-            </div>
-
-            <div class="home-grid">
-              <div class="tile now-playing">
-                <div class="tile-header">
-                  <span>Now Spinning</span>
-                  <span class="chip">TRACK 05</span>
-                </div>
-                <div class="album">
-                  <div class="album-art"></div>
-                  <div>
-                    <h3>Crystal Circuit</h3>
-                    <p>NEON DANCE CLUB</p>
-                  </div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 62%"></div>
-                </div>
-                <div class="controls">
-                  <button>⏮</button>
-                  <button class="play">⏯</button>
-                  <button>⏭</button>
-                </div>
-              </div>
-
-              <div class="tile library">
-                <h2>Disc Library</h2>
-                <div class="library-list">
-                  <div class="library-item">
-                    <span>Neon Groove Vol.1</span>
-                    <span>48 tracks</span>
-                  </div>
-                  <div class="library-item">
-                    <span>Midnight Signal</span>
-                    <span>31 tracks</span>
-                  </div>
-                  <div class="library-item">
-                    <span>City Echoes</span>
-                    <span>22 tracks</span>
-                  </div>
-                </div>
-                <button class="secondary">ディスク追加</button>
-              </div>
-
-              <div class="tile quick">
-                <h2>Quick Access</h2>
-                <div class="quick-grid">
-                  <button class="quick-btn">EQ Presets</button>
-                  <button class="quick-btn">Room FX</button>
-                  <button class="quick-btn">Rip Queue</button>
-                  <button class="quick-btn">Laser Scan</button>
-                </div>
-              </div>
-
-              <div class="tile ambience">
-                <h2>Ambient Capsule</h2>
-                <p>ガラス越しに揺れるライトと、回転ディスクの反射を同期。</p>
-                <div class="ambient-controls">
-                  <div>
-                    <span>Glow</span>
-                    <div class="mini-bar">
-                      <div style="width: 72%"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <span>Pulse</span>
-                    <div class="mini-bar">
-                      <div style="width: 48%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="home-footer">
-              <button class="secondary" data-action="back-setup">設定に戻る</button>
-              <button class="primary">再生開始</button>
-            </div>
+        <section>
+          <h2>おすすめの曲 →</h2>
+          <div class="row cards">
+            <div class="card large"></div>
+            <div class="card large"></div>
+            <div class="card"></div>
+            <div class="card"></div>
           </div>
+        </section>
+
+        <section class="player">
+          <div class="source-inputs">
+            <label>
+              音楽フォルダ
+              <input id="folderPath" value="./music" />
+            </label>
+            <button data-api="load-folder">フォルダ読込</button>
+            <label>
+              CDパス
+              <input id="cdPath" value="/media/cdrom" />
+            </label>
+            <button data-api="load-cd">CD読込</button>
+          </div>
+
+          <div class="status">
+            <p id="track">Track: -</p>
+            <p id="state">State: Stopped</p>
+            <p id="meta">0 / 0</p>
+          </div>
+
+          <div class="controls">
+            <button data-api="prev">⏮</button>
+            <button data-api="play">▶</button>
+            <button data-api="pause">⏸</button>
+            <button data-api="next">⏭</button>
+            <button data-api="stop">⏹</button>
+          </div>
+          <p id="message"></p>
         </section>
       </main>
     </div>
